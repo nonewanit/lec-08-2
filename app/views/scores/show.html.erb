@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @score %>
+
+<div>
+  <%= link_to "Edit this score", edit_score_path(@score) %> |
+  <% if session[:from]=="score_index" %>
+  <%= link_to "Back to scores", scores_path %>
+  <% else %>
+  <%= link_to "Back to edit_score", students_edit_score_url %>
+  <% end %>
+  <%= button_to "Destroy this score", @score, method: :delete %>
+</div>
